@@ -10,6 +10,7 @@ class Program
         Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Erba", 75);
         Pokemon Squirtle = new Pokemon("Squirtle", "Acqua", 70);
         Pokemon Onix = new Pokemon("Onix", "Roccia", "Terra", 80);
+        Pokemon Raichu = new Pokemon("Raichu", "Elettro", 100);
 
         SceltaPokemon();
 
@@ -99,6 +100,11 @@ class Program
             if (pkmScelto.hp > 0)
             {
                 Console.WriteLine("hai vinto la battaglia");
+
+                if (pkmScelto == pikachu)
+                {
+                    Evoluzione(pkmScelto);
+                }
             }
             else
             {
@@ -196,6 +202,17 @@ class Program
         void EnemyAttack(Pokemon pkmScelto)
         {
             Onix.Sassata(pkmScelto);
+        }
+
+        void Evoluzione(Pokemon pkmScelto)
+        {
+            if (pkmScelto == pikachu)
+            {
+                Console.WriteLine($"COSA IL TUO {pkmScelto} SI STA EVOLVENDO????");
+                string salvaNome = pkmScelto.nome;
+                pkmScelto = Raichu;
+                Console.WriteLine($"il tuo {salvaNome} si è evoluto in un {pkmScelto.nome};");
+            }
         }
 
         
